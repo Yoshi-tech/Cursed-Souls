@@ -11,6 +11,14 @@ export default class BootScene extends Phaser.Scene {
         this.load.on('progress', (progress: number) => {
             bar.width = 960 * progress;
         });
+
+        // Add error handler
+        this.load.on('loaderror', (file: Phaser.Loader.File) => {
+            console.error('Failed to load:', file.key, file.url);
+        });
+
+        // ... rest of your loads ...
+
         this.load.image('Ammit-jukebox-bg-removed', 'assets/Ammit-jukebox-bg-removed.png');
         this.load.image('Anubis-jukebox-bg-removed', 'assets/Anubis-jukebox-bg-removed.png');
         this.load.image('Apep-jukebox-bg-removed', 'assets/Apep-jukebox-bg-removed.png');
@@ -36,8 +44,8 @@ export default class BootScene extends Phaser.Scene {
         this.load.image('Tengu-jukebox-bg-removed', 'assets/Tengu-jukebox-bg-removed.png');
         this.load.image('Wraith Blade-jukebox-bg-removed', 'assets/Wraith Blade-jukebox-bg-removed.png');
         this.load.image('Wraith-jukebox-bg-removed', 'assets/Wraith-jukebox-bg-removed.png');
-        this.load.image('TitleCard', 'assets/TitleCard.png');
-
+        //this.load.image('TitleCard', 'assets/TitleCard.png');
+        this.load.image('TitleCardStatic', 'assets/TitleCard.png');
     }
 
     create() {

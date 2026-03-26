@@ -13,6 +13,7 @@
     "vite": "^8.0.1"
   },
   "dependencies": {
-    "phaser": "^3.90.0"
+    "phaser": "^3.90.0",
+    "phaser3-plugin-isometric": "^0.0.7"
   }
 }

@@ -6,20 +6,29 @@ export default class MenuScene extends Phaser.Scene {
     }
 
     create() {
-        // title card
-        const img = this.add.image(480, 270, 'TitleCard');
-        const scale = Math.min(960 / img.width, 540 / img.height);
-        img.setScale(scale).setOrigin(0.5, 0.5);
+    //     this.anims.create({
+    //     key: 'titleCardIdle',
+    //     frames: this.anims.generateFrameNumbers('TitleCard', { start: 0, end: 35 }),
+    //     frameRate: 10,
+    //     repeat: -1
+    // });
+    //     // title card
+    //     const img = this.add.sprite(480, 270, 'TitleCard');
+    //     const scale = Math.min(960 / img.width, 540 / img.height);
+    //     img.setScale(scale).setOrigin(0.5, 0.5);
 
-        // bob tween
-        this.tweens.add({
-            targets: img,
-            y: 210,
-            duration: 1500,
-            yoyo: true,
-            repeat: -1,
-            ease: 'Sine.easeInOut'
-        });
+    //     img.play('titleCardIdle');
+    this.add.image(480, 270, 'TitleCardStatic');
+
+        // // bob tween
+        // this.tweens.add({
+        //     targets: img,
+        //     y: 210,
+        //     duration: 1500,
+        //     yoyo: true,
+        //     repeat: -1,
+        //     ease: 'Sine.easeInOut'
+        // });
 
         // flame particle texture
         const graphics = this.make.graphics({ x: 0, y: 0 });
@@ -46,7 +55,7 @@ export default class MenuScene extends Phaser.Scene {
 
         // buttons
         const createButton = (x: number, y: number, label: string, callback: () => void) => {
-            const bg = this.add.rectangle(x, y, 220, 44, 0x2a2a3a)
+            this.add.rectangle(x, y, 220, 44, 0x2a2a3a)
                 .setStrokeStyle(1, 0x7B2FBE)
                 .setAlpha(0.85);
             const text = this.add.text(x, y, label, {

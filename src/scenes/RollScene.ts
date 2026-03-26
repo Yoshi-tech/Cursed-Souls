@@ -23,7 +23,7 @@ export default class RollScene extends Phaser.Scene {
 
     }
     private carouselIndex = 0      // tracks which class is in center
-    private carouselTimer: Phaser.Time.TimerEvent
+    private carouselTimer!: Phaser.Time.TimerEvent
     private sprites: Phaser.GameObjects.Image[] = []
     private scrollText!: Phaser.GameObjects.Text
     private isRolling = false
@@ -83,7 +83,7 @@ export default class RollScene extends Phaser.Scene {
         typeNextChar();
     }
 
-    createGlow(x, y) {
+    createGlow(x: number, y: number) {
         // large soft circle, ADD blend, pulse tween
         const circle = this.add.circle(x, y, 120, 0x7B2FBE, 0.15);
         circle.setBlendMode("ADD");
